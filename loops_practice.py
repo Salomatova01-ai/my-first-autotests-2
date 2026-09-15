@@ -62,13 +62,15 @@ import time
 LOAD_THRESHOLD = 85
 ITERATIONS = 10
 SLEEP_SECONDS = 0.2
+MIN_LOAD = 0
+MAX_LOAD = 100
 
 
 def simulate_load_monitoring() -> None:
     iteration = 0
 
     while iteration < ITERATIONS:
-        load = random.randint(0, 100)
+        load = random.randint(MIN_LOAD, MAX_LOAD)
         print(f"Итерация {iteration + 1}: нагрузка {load}%")
 
         if load > LOAD_THRESHOLD:
